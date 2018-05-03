@@ -1,5 +1,3 @@
-
-
 #!groovy
 
 node("linux") {
