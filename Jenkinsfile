@@ -7,7 +7,7 @@ node("linux") {
 			checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/NativeScript/nativescript-vscode-extension/']]])
 		}
 
-		docker.image("mkenney/npm").inside() {
+		docker.image("mkenney/npm:node-8-alpine").inside() {
 			sh "npm -v"
 			stage ("Install dependencies") {
 				withEnv([npmLogLevelEnvVar]) {
