@@ -9,9 +9,8 @@ node("linux") {
 
 		docker.image("mkenney/docker-npm").inside() {	
 			stage ("Install dependencies") {
-					withEnv([npmLogLevelEnvVar]) {
-						sh "npm install"
-					}
+				withEnv([npmLogLevelEnvVar]) {
+					sh "npm install"
 				}
 			}
 
