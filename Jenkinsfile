@@ -15,10 +15,9 @@ node("linux") {
 			}
 
 			stage ("Build and package") {
-					withEnv([npmLogLevelEnvVar]) {
-						sh "npm run build"
-						sh "npm run package"
-					}
+				withEnv([npmLogLevelEnvVar]) {
+					sh "npm run build"
+					sh "npm run package"
 				}
 			}
 
